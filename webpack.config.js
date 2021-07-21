@@ -2,8 +2,8 @@
 
 const webpack = require("webpack");
 const path = require("path");
-const nodeExternals = require("webpack-node-externals"); //번들링 과정에서 외부 모듈(라이브러리)를 제외할 수 있게 하는 패키지
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const nodeExternals = require("webpack-node-externals"); //번들링 과정에서 외부 모듈(라이브러리)를 제외할 수 있게 하는 패키지
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
      mode: 'development',
@@ -11,7 +11,9 @@ module.exports = {
           extensions: ['.js']
      },
      // externals: [nodeExternals()],
-     plugins: [new CleanWebpackPlugin("build.js")],
+     plugins: [
+          new HtmlWebpackPlugin({ template: "./index.html" })
+     ],
 
      entry: __dirname + "/src/index.js", //1.입력; 웹팩은 다른 모듈을 사용하고 있는 최상위 자바스크립트 파일이 어디에 있는지 알아야 함, 설정 파일에서 이를 Entry 속성으로 명시, 설정파일에서 entry 설정하지 않은 경우 자동 src/index
      module: { //2.어느 모듈에 적용할지 선택;

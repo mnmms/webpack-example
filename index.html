@@ -12,11 +12,12 @@
   -JS파일은 HTML파일로부터 완전한 독립을 이룰 수 없음 (JS파일은 HTML파일에 의존적, HTML파일 없이는 정상 작동이 불가능)
   -외부 라이브러리를 추가적으로 사용할 때마다 JS파일이 아닌 HTML파일을 수정 (-> 자체 외부 모듈 임포트 기능 필요성)
   -->
-</head>
+<script defer src="./build.js"></script></head>
 <body>
+  <div id="root"></div>
   <!-- <script src="./index.js"></script> -->
   <!-- <script src="./dist/main.js"></script> -->
   <!-- webpack이 만들어준 번들 파일을 참조 -->
-  <script src="./build.js"></script>
+  <!-- <script src="./build.js"></script> -->
 </body>
 </html>
